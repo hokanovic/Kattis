@@ -1,8 +1,6 @@
 package hknvc;
 
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 public class Apaxiaaaaaaaaaaaans {
     public static void main(String[] args) {
@@ -10,15 +8,15 @@ public class Apaxiaaaaaaaaaaaans {
         String input = scanner.next();
 
         StringBuilder sb = new StringBuilder();
-        char prev = input.charAt(0);
-        sb.append(prev);
-        for (int i = 1; i < input.length(); i++) {
-            char next = input.charAt(i);
-            if (prev != next) {
-                sb.append(next);
-                prev = next;
+        int last = input.length() - 1;
+        for (int i = 0; i < last; i++) {
+            char now = input.charAt(i);
+            char next = input.charAt(i+1);
+            if (now != next) {
+                sb.append(now);
             }
         }
+        sb.append(input.charAt(last));
         System.out.println(sb.toString());
     }
 }
